@@ -1,5 +1,3 @@
-MOVIE_API_KEY = '2a7aa1337248c047b356927474f962b0'
-SECRET_KEY = '<Flask WTF Secret Key>'
 import os
 
 class Config:
@@ -8,3 +6,15 @@ class Config:
     MOVIE_API_KEY = os.environ.get('MOVIE_API_KEY')
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
+
+class ProdConfig(Config):
+    pass
+
+
+class DevConfig(Config):
+    DEBUG = True
+
+config_options = {
+'development':DevConfig,
+'production':ProdConfig
+}
