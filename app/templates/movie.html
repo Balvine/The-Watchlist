@@ -1,6 +1,9 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 
+
+<!-- Styles block -->
+
 {% block styles%}
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/movie.css')}}">
@@ -22,8 +25,13 @@
 
             <p class="ratings"> <b> {{ movie.vote_average }}</b> - <i>{{ movie.vote_count}} votes </i> </p>
             <a class="ratings" href="/movie/review/new/{{movie.id}}"> Write a new review</a>
+
+
         </div>
+
+
     </div>
+    
     <div class="row">
 
         <h1>Reviews</h1>
